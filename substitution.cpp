@@ -1,5 +1,8 @@
 #include "substitution.h"
 
+/*
+ * The main function of the program. For usage information run the program without parameters.
+ */
 int main(int argc, char** argv){
     bool o = false, d = false;
     initialize(argc,argv,o,d);
@@ -12,6 +15,9 @@ int main(int argc, char** argv){
     encrypt(cyphier, o, d, mapping);
 }
 
+/*
+ * This function encrypts or decrypts stdin to stdout.
+ */
 void encrypt(int cyphier, bool o, bool d, char *mapping){
     string input = readFromStdIn(d);
     string output = "";
@@ -36,11 +42,18 @@ void encrypt(int cyphier, bool o, bool d, char *mapping){
     cout << (d?"Decrypted":"Encrypted")<<" text:\n"<<  output << endl;
 
 }
+
+/*
+ * This method converts a decrypted character to an encrypted character and vica versa. This is done according to a cyphier
+ */
 inline int convert(int cyphier, bool d,int index){
     if(d)cyphier = -cyphier;//Reverse the cyphier to decrypt the text
     return mod((index - cyphier),26);
 }
 
+/*
+ * This method converts a decrypted character to an encrypted character and vica versa. This is done according to a mapping.
+ */
 inline char convert(char* mapping, bool d,int index){
     if(!d)
         return mapping[index];
@@ -50,6 +63,9 @@ inline char convert(char* mapping, bool d,int index){
     return i + 'a';
 }
 
+/*
+ * Reads lines from the stdin until an eof is encountered. This can be simulated in the terminal by ctrl d (linux) or ctrl z (windows
+ */
 string readFromStdIn(bool d) {
     cout << "Enter text to " << (d ? "decrypt" : "encrypt") << endl;
     string total;
@@ -59,6 +75,9 @@ string readFromStdIn(bool d) {
     return total;
 }
 
+/*
+ * Returns the remainder of a division. This function is guaranteed to return a positive value.
+ */
 int mod (int a, int b)
 {
     int ret = a % b;
@@ -67,6 +86,9 @@ int mod (int a, int b)
     return ret;
 }
 
+/*
+ * Initializes the program. It checks the command line parameters and sets the o and d references accordingly
+ */
 void initialize(int argc, char** argv,bool& o, bool& d){
     if(argc==1) {
         cout << info << endl;

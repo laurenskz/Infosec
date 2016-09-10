@@ -1,4 +1,6 @@
-zyxwvtsrqpnmlkjhgfdcbaeiou
+
+Excersice 2:
+mapping: zyxwvtsrqpnmlkjhgfdcbaeiou
 
 The three biggest information security challenges of 2015
 
@@ -17,3 +19,16 @@ source noted that 25 percent of cyberincidents reported 2014 were labeled
 
 Source:
 https://certesnetworks.com/blog/3-biggest-information-security-challenges-of-2015/
+
+Excersice 3
+
+decrypted text
+butidontwanttogoamongmadpeoplesaidaliceohyoucanthe
+lpthatsaidthecatwereallmadherethisquoteisfromalice
+inwonderlandbylewiscarroll
+
+"But I don't want to go among mad people" said Alice. 
+"Oh you can't help that" said the cat, "we're all mad here". This quote is from Alice in wonderland by Lewis Carroll.
+
+a shift of 17 to the left was applied to the original text to obtain the cipher text.
+
